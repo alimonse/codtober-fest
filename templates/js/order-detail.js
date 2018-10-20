@@ -11,7 +11,8 @@ let id = 1;
  * with your service endpoint below
  * ****************************
  */
-fetch(`json/order.json?id=${id}`)
+//fetch(`json/order.json?id=${id}`)
+fetch(`http://localhost:3002/pizza/obtenerUno/8`)
     .then(response => response.json())
     .then(order => {
         let template = createRowTemplate(order);

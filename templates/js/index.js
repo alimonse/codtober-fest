@@ -8,7 +8,7 @@
  * ****************************
  */
 function postOrder(order) {
-    fetch('/pizza', {
+    fetch('http://localhost:3002/pizza/crear', {
         method: 'POST',
         body: JSON.stringify(order),
         headers: {
