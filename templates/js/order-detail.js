@@ -1,7 +1,11 @@
 /**
  * Set the id to query the order
  */
-let id = 1;
+
+let urlParams = new URLSearchParams(window.location.search)
+let id = urlParams.get('id');
+console.log("id usuarioss",id)
+
 
 /**
  * Fetchs de order detail and appends to the page.
@@ -12,7 +16,7 @@ let id = 1;
  * ****************************
  */
 //fetch(`json/order.json?id=${id}`)
-fetch(`http://localhost:3002/pizza/obtenerUno/3`)
+fetch(`http://localhost:3002/pizza/obtenerUno?id=${id}`)
     .then(response => response.json())
     .then(order => {
         let template = createRowTemplate(order);

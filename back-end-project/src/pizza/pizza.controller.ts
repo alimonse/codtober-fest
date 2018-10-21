@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, BadRequestException } from "@nestjs/common";
+import { Controller, Post, Body, Get, Param, BadRequestException, Query } from "@nestjs/common";
 import { PizzaService } from "./pizza.service";
 import { crearPizza } from "./funciones-pizza/crear-pizza";
 import { validate } from "class-validator";
@@ -9,9 +9,9 @@ export class PizzaController{
 
     constructor(private readonly _PizzaService: PizzaService ){}
 
-    @Get('obtenerUno/:id')
+    @Get('obtenerUno')
     obtenerUno(
-    @Param('id') id) {
+    @Query('id') id) {
         return  this._PizzaService.obtenerUno(id)
     }
 
